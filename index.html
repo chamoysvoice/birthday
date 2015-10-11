@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Birthday</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style media="screen">
+      *{
+        padding:0;
+        margin:0;
+      }
+      .container{
+        position:relative;
+        width:100vw;
+        height: 100vh;
+        background-color: #90caf9 ;
+      }
+      td, th{
+        font-size: 4em;
+        color: #e3f2fd;
+        font-family: monospace;
+        padding: 10px 40px;
+        text-align: center;
+      }
+      table{
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+     @media (max-width: 1000px) {
+        td, th{
+          font-size: 4em;
+          padding: 10px 20px;
+        }
+      }
+      @media (max-width: 900px){
+        td, th{
+          font-size: 3em;
+          padding: 10px 20px;
+        }
+      }
+      @media (max-width: 720px){
+        td, th{
+          font-size: 2em;
+          padding: 10px 10px;
+        }
+      }
+      @media (max-width: 465px){
+        td, th{
+          font-size: 1.3em;
+          padding: 10px 5px;
+        }
+      }
+
+      #github-link{
+        position:absolute;
+        color: #e3f2fd;
+        top: 86%;
+        left: 50%;
+        transform:translate(-50%, -50%);
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Days
+            </th>
+            <th>
+              Hours
+            </th>
+            <th>
+              Minutes
+            </th>
+            <th>
+              Seconds
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span id="days">00</span>
+            </td>
+            <td>
+              <span id="hours">00</span>
+            </td>
+            <td>
+              <span id="minutes">00</span>
+            </td>
+            <td>
+              <span id="seconds">00</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a id="github-link" href="https://www.github.com/chamoysvoice/birthday/"><i class="fa fa-github fa-5x"></i></a>
+    </div>
+  <script src="dist/countdown.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      countdown('11/02/2015 00:00:00 AM', ['days', 'hours', 'minutes', 'seconds'], function(){
+        console.log("Callback Bitch");
+      });
+    </script>
+  </body>
+</html>
