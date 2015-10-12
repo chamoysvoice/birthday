@@ -1,4 +1,4 @@
-var countdown = function (date, ids, callback){
+var countdown = function (date, ids){
   var _second = 1000,
       _minute = _second * 60,
       _hour = _minute * 60,
