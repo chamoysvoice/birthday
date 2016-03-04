@@ -7,9 +7,13 @@ var countdown = function (date, ids){
   var date = new Date(date),
       timer,
 
+
   calculate = function(){
     var now = new Date();
-    var remaining = date.getTime() - now.getTime();
+    var remaining;
+    while ( (remaining = date.getTime() - now.getTime())< 0){
+      date.setFullYear(date.getFullYear() + 1);
+    }
     var data;
 
     if(isNaN(date)){
@@ -31,16 +35,16 @@ var countdown = function (date, ids){
       'hours': Math.floor((remaining % _day) / _hour ),
       'minutes': Math.floor((remaining % _hour) / _minute),
       'seconds': Math.floor((remaining % _minute) / _second)
-    }
+    };
 
    if(ids.length){
-     for(x in ids){
+     for (x in ids){
        var i = ids[x];
        document.getElementById(i).innerHTML = data[i];
      }
    }
-  }
+ };
 
 calculate();
 
-}
+};
